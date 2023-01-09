@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Tab 3 </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-item>
+      <ion-select placeholder="Select fruit" (ionChange)="handleChange($event)">
+        <ion-select-option value="nomProf">nom</ion-select-option>
+        <ion-select-option value="nomCours">Cour</ion-select-option>
+      </ion-select>
+      <ion-input type="text" [(ngModel)]="val">zada</ion-input>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-button (click)="find()">valider</ion-button>
+    </ion-item>
+    <ion-item class="row" *ngIf="rechercheList.length != 0">
+      <ion-col>nomCours</ion-col>
+      <ion-col>nomProf</ion-col>
+    </ion-item>
+    <ion-list *ngFor="let cour of rechercheList">
+      <ion-item class="row">
+        <ion-col>{{cour.nomCours}}</ion-col>
+        <ion-col>{{cour.nomProf}}</ion-col>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

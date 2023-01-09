@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      saisie
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">sasie</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form (ngSubmit)="logform()" #form="ngForm">
+    <ion-item fill="solid">
+      <ion-label position="floating" >nom_cours</ion-label>
+      <ion-input type="text" [(ngModel)]="formCourDTO.nomCours" name="nomCours"></ion-input>
+      <ion-note slot="helper">indiquer nom du cours</ion-note>
+      <ion-note slot="error">mal renseigner</ion-note>
+    </ion-item>
+    <ion-item fill="solid">
+      <ion-label position="floating">nbr_eleve</ion-label>
+      <ion-input type="number" [(ngModel)]="formCourDTO.nbrEleve" name="nbrEleve"></ion-input>
+      <ion-note slot="helper">indiquer nombre d'eleves</ion-note>
+    </ion-item>
+    <ion-item fill="solid">
+      <ion-label position="floating">nom_prof</ion-label>
+      <ion-input type="text" [(ngModel)]="formCourDTO.nomProf" name="nomProf"></ion-input>
+      <ion-note slot="helper">indiquer nom du professeur</ion-note>
+    </ion-item>
+    <ion-button ion-button type="submit" block >Add Todo</ion-button>
+  </form>
+</ion-content>

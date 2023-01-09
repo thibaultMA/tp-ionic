@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profList</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid fixed>
+    <ion-item>
+      <ion-col size="3">photo</ion-col>
+      <ion-col size="3">nom</ion-col>
+      <ion-col size="3">prenom</ion-col>
+      <ion-col size="3">age</ion-col>
+    </ion-item>
+    <ion-item *ngFor="let prof of list">
+      <ion-col size="3"><ion-img [src]="prof.photo.webviewPath"></ion-img></ion-col>
+      <ion-col size="3">{{prof.nom}}</ion-col>
+      <ion-col size="3">{{prof.prenom}}</ion-col>
+      <ion-col size="3">{{prof.age}}</ion-col>
+    </ion-item>
+  </ion-grid>
+</ion-content>

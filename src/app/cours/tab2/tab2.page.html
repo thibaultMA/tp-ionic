@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> list cours </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="logData()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-content>
+    <ngx-datatable
+      class="dark"
+      [limit]="8"
+      [rows]="coursList"
+      [rowHeight]="50"
+      [columns]="columns"
+      [columnMode]="'force'"
+      [sortType]='"multi"'
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [cssClasses]="'row_'"
+      (click)="demandeSuppression($event)"
+    >
+    </ngx-datatable>
+  </ion-content>
+</ion-content>

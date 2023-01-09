@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>profSaisie</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label position="fixed" >nom </ion-label>
+        <ion-input type="text" placeholder="nom" name="nom" [(ngModel)]="prof.nom"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="fixed" >prenom </ion-label>
+        <ion-input type="text" placeholder="prenom" name="prenom" [(ngModel)]="prof.prenom"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label>urlPhoto </ion-label>
+        <ion-input type="file" placeholder="urlPhoto"></ion-input>
+      </ion-item> -->
+      <ion-item>
+        <ion-label position="fixed" >age </ion-label>
+        <ion-input type="number" placeholder="age" min="0" name="age" [(ngModel)]="prof.age"></ion-input>
+      </ion-item>
+      <ion-item class="">
+
+        <ion-label position="fixed" > photo</ion-label>
+        <ion-col *ngIf="prof.photo.filePath" size="3"><ion-img [src]="prof.photo.webviewPath"></ion-img></ion-col>
+        <ion-button (click)="ajoutPhoto()">
+          <ion-icon name="camera"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="ajoutProf()">
+      <ion-icon slot="icon-only" name="add"></ion-icon>
+    </ion-button>
+  </form>
+  <!-- nom
+    prenom
+    urlPhoto
+    age -->
+    <div style="height: 100vh;"></div>
+</ion-content>
